@@ -36,3 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+
+function redirectToPortfolio() {
+  window.location.href = "./portfolio.html";
+  return false;
+}
