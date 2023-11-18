@@ -186,7 +186,7 @@ body{
   
 
   header{
-    height: 700px;
+    height: auto;
     background: linear-gradient(175deg, #0891B1 60%, #fff 60%);
     display: flex;
     align-items: center;
