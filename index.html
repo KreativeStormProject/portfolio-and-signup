@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Sign-up page</title>
 </head>
 
@@ -18,7 +19,7 @@
             </div>
         </div>
         <div class="signup-box">
-            <form action="./portfolio.html"  id="signup-form">
+            <form action="portfolio.html" method="post" id="signup-form">
                 <div class="form-header-box">
                     <h2 class="text-1">Sign Up <i>now</i> to Know stuff about me and my amazing projects</h2>
                     <h2 class="text-1"> You know you want to</h2>
@@ -28,65 +29,90 @@
                         <h2>Let's Do this!</h2>
                         <div class="input-box">
                             <div class="label-input-group">
-                                <label for="first_name">*FIRST NAME:</label>
-                                <input type="text" name="First name" id="first_name" pattern="[A-Za-z]+" required title=" Please enter only letters A-Z">
-                                <span class="error-message" data-target="first_name">Please enter only letters A-Z</span>
+                                <label for="first_name" id="first_name_label">*FIRST NAME:</label>
+                                <input type="text" name="First name" id="first_name" pattern="^[A-Za-z]{2,}$"
+                                    aria-labelledby="first_name_label" aria-describedby="first_name_error"
+                                    aria-invalid="true" required
+                                    title=" Please enter only letters A-Z must be 2 or more characters">
+                                <span class="error-message" data-target="first_name" id="first_name_error"
+                                    aria-live="polite">Please enter only letters A-Z must be 2 or more characters</span>
                             </div>
                         </div>
 
                         <div class="input-box">
                             <div class="label-input-group">
-                                <label for="last_name">*LAST NAME:</label>
-                                <input type="text" name="Last name" id="last_name" pattern="[A-Za-z]+" required title=" Please enter only letters A-Z">
-                                <span class="error-message" data-target="last_name" >Please enter only letters A-Z</span>
+                                <label for="last_name" id="last_name_label">*LAST NAME:</label>
+                                <input type="text" name="Last name" id="last_name" pattern="^[A-Za-z]{2,}$"
+                                    aria-labelledby="last_name_label" aria-describedby="last_name_error"
+                                    aria-invalid="true" required
+                                    title=" Please enter only letters A-Z must be 2 or more characters">
+                                <span class="error-message" data-target="last_name" id="last_name_error"
+                                    aria-live="polite">Please enter only letters A-Z must be 2 or more characters</span>
                             </div>
                         </div>
 
                         <div class="input-box">
                             <div class="label-input-group">
-                                <label for="email">*EMAIL:</label>
-                                <input type="email" name="email" id="email"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
-                                <span class="error-message" data-target="email" >Please enter a valid email address like example@gmail.com</span>
+                                <label for="email" id="email_label">*EMAIL:</label>
+                                <input type="email" name="email" id="email"
+                                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                    aria-labelledby="email_label" aria-describedby="email_error" aria-invalid="true"
+                                    required>
+                                <span class="error-message" data-target="email" id="email_error"
+                                    aria-live="polite">Please enter a valid email address like example@gmail.com</span>
                             </div>
                         </div>
 
                         <div class="input-box">
                             <div class="label-input-group">
-                                <label for="phone_no">PHONE NUMBER:</label>
-                                <input type="text" name="phone_no" id="phone_no" pattern="^\+\d{8,15}$" title="Please enter a valid phone number">
-                                <span class="error-message" data-target="phone_no">Please enter valid country code and phone number (8 to 15 digits)</span>
+                                <label for="phone_no" id="phone_no_label">PHONE NUMBER:</label>
+                                <input type="text" name="phone_no" id="phone_no" pattern="^(00|\+)\d{8,15}$"
+                                    aria-labelledby="phone_no_label" title="Please enter a valid phone number"
+                                    aria-describedby="phone_no_error" aria-invalid="true">
+                                <span class="error-message" data-target="phone_no" id="phone_no_error"
+                                    aria-live="polite">Please enter valid country code and phone number (8 to 15 digits)
+                                    example 001235648986 or +123456789 </span>
 
                             </div>
                         </div>
 
                         <div class="input-box">
                             <div class="label-input-group">
-                                <label for="password">*PASSWORD:</label>
-                                <input type="password" name="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$" title="password must be 5 or more characters including one cap letter, number and symbol " required>
-                                <span class="error-message" data-target="password">password must be 5 or more characters including one cap letter, number and symbol </span>
+                                <label for="password" id="password_label">*PASSWORD:</label>
+                                <input type="password" name="password" id="password" aria-labelledby="password_label"
+                                    aria-describedby="password_error" aria-invalid="true"
+                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$"
+                                    title="password must be 5 or more characters including one cap letter, number and symbol "
+                                    required>
+                                <span class="error-message" data-target="password" id="password_error"
+                                    aria-live="polite">password must be 5 or more characters including one cap letter,
+                                    number and symbol </span>
                             </div>
                         </div>
 
                         <div class="input-box">
                             <div class="label-input-group">
-                                <label for="confirm_password">*CONFIRM PASSWORD:</label>
-                                <input type="password" name="confirm_password" id="confirm_password" required>
-                                <span id="password-match-error" class="error-message">Passwords do not match</span>
+                                <label for="confirm_password" id="confirm_password_label">*CONFIRM PASSWORD:</label>
+                                <input type="password" name="confirm_password" id="confirm_password"
+                                    aria-labelledby="confirm_password_label" aria-describedby="password-match-error"
+                                    aria-invalid="true" required>
+                                <span id="password-match-error" class="error-message" aria-live="polite">Passwords do
+                                    not match</span>
                             </div>
                         </div>
                         <p>Inputs with * are required</p>
                     </div>
                 </div>
                 <div class="form-footer-box">
-                    <button class="create-button" id="create-button"  type="submit">Create Account</button>
-                    <p> Already have an account? <a href="./portfolio.html">Login</a></p>
+                    <button class="create-button" id="create-button" type="submit">Create Account</button>
+                    <p> Already have an account? <a href="#">Login</a></p>
                 </div>
             </form>
         </div>
 
     </div>
     </div>
-    <script src="script.js" defer></script>
+
 </body>
 
 </html>
