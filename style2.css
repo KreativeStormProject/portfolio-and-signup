@@ -11,8 +11,8 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 95%; /* Adjust max-width as needed */
-    padding-left: 24px; 
+    width: 100%; /* Adjust max-width as needed */
+    align-items: center;
 }
 
 .card {
@@ -63,7 +63,7 @@ img {
 .mainTitle{
     font-weight: bolder;
     font-size: 2.5rem;
-    padding-left: 6rem;
+    padding-left: 5rem;
 }
 
 footer {
